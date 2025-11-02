@@ -1,0 +1,22 @@
+===========================================
+FAVICON.ICO - ACTION REQUIRED
+===========================================
+
+You need to create your own favicon.ico file for your website.
+
+HOW TO CREATE A FAVICON:
+1. Use an online favicon generator (like favicon.io or realfavicongenerator.net)
+2. Upload a square image (at least 256x256 pixels recommended)
+3. Download the generated favicon.ico file
+4. Place it in the root folder of your website (same folder as index.html)
+
+ALTERNATIVE:
+You can also create a simple favicon using:
+- A free icon from icons8.com or flaticon.com
+- Your logo converted to .ico format
+- A simple text-based icon
+
+The favicon.ico file should be placed in the root directory where index.html is located.
+
+===========================================
+

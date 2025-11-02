@@ -1,0 +1,14 @@
+# robots.txt for GitHub Pages
+
+User-agent: *
+Allow: /
+
+# Disallow admin or private areas (if you have any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Sitemap location
+Sitemap: https://yourusername.github.io/yourrepository/sitemap.xml
+
+# Note: Update the Sitemap URL above with your actual GitHub Pages URL
+
