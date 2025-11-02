@@ -5,46 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Teacher Login - SSJCOE">
     <title>Teacher Login - SSJCOE</title>
-    <link rel="stylesheet" href="login-styles.css">
+    <link rel="stylesheet" href="animated-login-styles.css">
 </head>
 <body>
-    <div class="main-content" style="display: block;">
+    <!-- Floating Particles Background -->
+    <canvas id="particleCanvas"></canvas>
+    
+    <div class="main-content" style="display: flex;">
         <div class="login-container">
             <div class="login-box">
                 <div class="back-link">
-                    <a href="login.html" style="color: var(--accent-color); text-decoration: none; font-size: 0.95rem; transition: color 0.3s ease;">
+                    <a href="index.html" style="color: var(--accent-color); text-decoration: none; font-size: 0.95rem; transition: color 0.3s ease;">
                         ← Back to Login Selection
                     </a>
                 </div>
                 
                 <div class="logo-section">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">👨‍🏫</h2>
-                    <h1 class="college-name" style="font-size: 2rem;">Teacher Login</h1>
+                    <div class="icon-wrapper">
+                        👨‍🏫
+                    </div>
+                    <h1 class="form-title">Welcome Back</h1>
+                    <p class="form-subtitle">Sign in to your teacher portal</p>
                 </div>
                 
-                <form id="teacherLoginForm">
-                    <div class="form-group">
-                        <label for="teacherId" style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500; font-size: 0.95rem;">Teacher ID</label>
-                        <input type="text" id="teacherId" name="teacherId" required placeholder="Enter your Teacher ID" 
-                               style="width: 100%; padding: 12px 15px; border: 2px solid var(--border-color); border-radius: 6px; font-size: 1rem; background: var(--bg-primary); color: var(--text-primary); transition: all 0.3s ease;">
+                <form id="teacherLoginForm" class="animated-form">
+                    <div class="form-field-wrapper">
+                        <div class="form-field" data-placeholder="Teacher ID">
+                            <span class="field-icon">👨‍🏫</span>
+                            <input type="text" id="teacherId" name="teacherId" required>
+                            <label for="teacherId">Teacher ID</label>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="teacherPassword" style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500; font-size: 0.95rem;">Password</label>
-                        <input type="password" id="teacherPassword" name="password" required placeholder="Enter your password"
-                               style="width: 100%; padding: 12px 15px; border: 2px solid var(--border-color); border-radius: 6px; font-size: 1rem; background: var(--bg-primary); color: var(--text-primary); transition: all 0.3s ease;">
+                    
+                    <div class="form-field-wrapper">
+                        <div class="form-field" data-placeholder="Password">
+                            <span class="field-icon">🔒</span>
+                            <input type="password" id="teacherPassword" name="password" required>
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <span class="eye-icon">👁️</span>
+                            </button>
+                            <label for="teacherPassword">Password</label>
+                        </div>
                     </div>
-                    <button type="submit" class="btn-primary" 
-                            style="width: 100%; padding: 12px 20px; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; background: var(--accent-color); color: var(--bg-primary); transition: all 0.3s ease;">
-                        Login
+                    
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <span>Remember me</span>
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span class="btn-text">Sign In</span>
+                        <span class="btn-loader"></span>
                     </button>
                 </form>
-                <p class="login-footer" style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.85rem;">
-                    Don't have an account? Contact your administrator.
+                
+                <p class="login-footer">
+                    Don't have an account? <a href="#" style="color: var(--accent-color);">Contact administrator</a>
                 </p>
             </div>
         </div>
     </div>
-    <script src="login-form-handler.js"></script>
+    <script src="animated-login-script.js"></script>
 </body>
 </html>
-
