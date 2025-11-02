@@ -3,78 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional portfolio website">
-    <title>Home - Professional Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Login - Shivajirao S. Jondhale College of Engineering">
+    <title>Login - SSJCOE</title>
+    <link rel="stylesheet" href="login-styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">Your Portfolio</div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="gooey-container">
+                <svg class="gooey-filter" aria-hidden="true" focusable="false">
+                    <defs>
+                        <filter id="threshold">
+                            <feColorMatrix
+                                in="SourceGraphic"
+                                type="matrix"
+                                values="1 0 0 0 0
+                                        0 1 0 0 0
+                                        0 0 1 0 0
+                                        0 0 0 255 -140"
+                            />
+                        </filter>
+                    </defs>
+                </svg>
+                <div class="gooey-text" id="gooeyText">
+                    <span class="text-layer" id="text1">Engineering</span>
+                    <span class="text-layer" id="text2">Is</span>
+                </div>
+                <div class="loading-subtitle">Welcome to SSJCOE</div>
             </div>
         </div>
-    </nav>
+    </div>
 
-    <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">Welcome to My Portfolio</h1>
-            <p class="hero-subtitle">I create beautiful and functional websites</p>
-            <a href="contact.html" class="btn btn-primary">Get In Touch</a>
-        </div>
-    </section>
-
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">What I Do</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Web Design</h3>
-                    <p>Creating beautiful and user-friendly designs</p>
+    <!-- Main Login Page -->
+    <div id="mainContent" class="main-content hidden">
+        <div class="login-container">
+            <div class="login-box">
+                <div class="logo-section">
+                    <h1 class="college-name">SSJCOE</h1>
+                    <p class="college-tagline">Shivajirao S. Jondhale College of Engineering</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💻</div>
-                    <h3>Web Development</h3>
-                    <p>Building responsive and modern websites</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Optimization</h3>
-                    <p>Ensuring fast and efficient performance</p>
+                
+                <div class="login-options">
+                    <a href="#student" class="login-card" data-type="student">
+                        <div class="card-icon">👨‍🎓</div>
+                        <h2>Student</h2>
+                        <p>Login to access your student portal</p>
+                    </a>
+                    
+                    <a href="#teacher" class="login-card" data-type="teacher">
+                        <div class="card-icon">👨‍🏫</div>
+                        <h2>Teacher</h2>
+                        <p>Login to access faculty dashboard</p>
+                    </a>
+                    
+                    <a href="#principal" class="login-card" data-type="principal">
+                        <div class="card-icon">👨‍💼</div>
+                        <h2>Principal</h2>
+                        <p>Login to admin dashboard</p>
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="about-preview">
-        <div class="container">
-            <div class="about-content">
-                <h2>About Me</h2>
-                <p>I'm a passionate web developer dedicated to creating exceptional digital experiences. With a focus on clean code and innovative solutions, I bring ideas to life through technology.</p>
-                <a href="about.html" class="btn btn-secondary">Learn More</a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Your Portfolio. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="login-script.js"></script>
 </body>
 </html>
 

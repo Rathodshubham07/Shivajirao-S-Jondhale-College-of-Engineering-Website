@@ -1,0 +1,286 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --bg-card: #1e1e1e;
+    --bg-hover: #2a2a2a;
+    --accent-color: #00d4ff;
+    --accent-hover: #00a8cc;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --border-color: #333333;
+    --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Loading Screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+/* Gooey Text Animation */
+.gooey-filter {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.gooey-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gooey-text {
+    position: relative;
+    width: 600px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: url(#threshold);
+}
+
+.text-layer {
+    position: absolute;
+    font-size: 72px;
+    font-weight: 900;
+    color: var(--accent-color);
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+    text-align: center;
+    user-select: none;
+    transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+.loading-subtitle {
+    margin-top: 20px;
+    font-size: 18px;
+    color: var(--text-secondary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    animation: fadeIn 1s ease 0.5s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Main Content */
+.main-content {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: slideIn 0.5s ease;
+}
+
+.main-content.hidden {
+    display: none;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.login-box {
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: var(--shadow-glow);
+    border: 1px solid var(--border-color);
+}
+
+/* Logo Section */
+.logo-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.college-name {
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--accent-color), #00a8cc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.college-tagline {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Login Cards */
+.login-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.login-card {
+    background: var(--bg-card);
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    text-decoration: none;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent, rgba(0, 212, 255, 0.1));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.login-card:hover::before {
+    opacity: 1;
+}
+
+.login-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-glow);
+    background: var(--bg-hover);
+}
+
+.login-card:active {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    transition: transform 0.4s ease;
+}
+
+.login-card:hover .card-icon {
+    transform: scale(1.1);
+}
+
+.login-card h2 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    position: relative;
+    z-index: 1;
+}
+
+.login-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .college-name {
+        font-size: 2.5rem;
+    }
+    
+    .college-tagline {
+        font-size: 1rem;
+    }
+    
+    .login-options {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .login-box {
+        padding: 2rem 1.5rem;
+    }
+    
+    .gooey-text {
+        width: 100%;
+        height: 100px;
+    }
+    
+    .text-layer {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .college-name {
+        font-size: 2rem;
+    }
+    
+    .login-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .card-icon {
+        font-size: 3rem;
+    }
+}
+

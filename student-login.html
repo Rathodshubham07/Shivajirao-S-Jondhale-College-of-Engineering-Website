@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Login - SSJCOE">
+    <title>Student Login - SSJCOE</title>
+    <link rel="stylesheet" href="login-styles.css">
+</head>
+<body>
+    <div class="main-content" style="display: block;">
+        <div class="login-container">
+            <div class="login-box">
+                <div class="back-link">
+                    <a href="login.html" style="color: var(--accent-color); text-decoration: none; font-size: 0.95rem; transition: color 0.3s ease;">
+                        ← Back to Login Selection
+                    </a>
+                </div>
+                
+                <div class="logo-section">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">👨‍🎓</h2>
+                    <h1 class="college-name" style="font-size: 2rem;">Student Login</h1>
+                </div>
+                
+                <form id="studentLoginForm">
+                    <div class="form-group">
+                        <label for="studentId" style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500; font-size: 0.95rem;">Student ID</label>
+                        <input type="text" id="studentId" name="studentId" required placeholder="Enter your Student ID" 
+                               style="width: 100%; padding: 12px 15px; border: 2px solid var(--border-color); border-radius: 6px; font-size: 1rem; background: var(--bg-primary); color: var(--text-primary); transition: all 0.3s ease;">
+                    </div>
+                    <div class="form-group">
+                        <label for="studentPassword" style="display: block; margin-bottom: 0.5rem; color: var(--text-primary); font-weight: 500; font-size: 0.95rem;">Password</label>
+                        <input type="password" id="studentPassword" name="password" required placeholder="Enter your password"
+                               style="width: 100%; padding: 12px 15px; border: 2px solid var(--border-color); border-radius: 6px; font-size: 1rem; background: var(--bg-primary); color: var(--text-primary); transition: all 0.3s ease;">
+                    </div>
+                    <button type="submit" class="btn-primary" 
+                            style="width: 100%; padding: 12px 20px; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; background: var(--accent-color); color: var(--bg-primary); transition: all 0.3s ease;">
+                        Login
+                    </button>
+                </form>
+                <p class="login-footer" style="text-align: center; margin-top: 1.5rem; color: var(--text-secondary); font-size: 0.85rem;">
+                    Don't have an account? Contact your administrator.
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="login-form-handler.js"></script>
+</body>
+</html>
+
