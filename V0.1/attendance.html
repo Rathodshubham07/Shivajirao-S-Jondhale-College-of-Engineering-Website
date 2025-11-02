@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Attendance Submission Form">
+    <title>Attendance Submission - Attendance System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="attendance-container">
+            <div class="back-link">
+                <a href="index.html">← Back to Home</a>
+            </div>
+            <div class="attendance-form-wrapper">
+                <h1>Attendance Submission Form</h1>
+                <form id="attendanceForm" class="attendance-form">
+                    <div class="form-group">
+                        <label for="studentName">Student Name</label>
+                        <input type="text" id="studentName" name="studentName" required placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studentId">Student ID</label>
+                        <input type="text" id="studentId" name="studentId" required placeholder="Enter your Student ID">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required placeholder="Enter subject name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="teacherName">Teacher Name</label>
+                        <input type="text" id="teacherName" name="teacherName" required placeholder="Enter teacher name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="status">Attendance Status</label>
+                        <select id="status" name="status" required>
+                            <option value="">Select Status</option>
+                            <option value="present">Present</option>
+                            <option value="absent">Absent</option>
+                            <option value="late">Late</option>
+                            <option value="excused">Excused</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="remarks">Remarks (Optional)</label>
+                        <textarea id="remarks" name="remarks" rows="3" placeholder="Any additional notes..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit Attendance</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
